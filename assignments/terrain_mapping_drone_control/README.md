@@ -21,9 +21,23 @@ Four ROS 2 nodes power the autonomous flight sequence:
 | `dimension_estimator.py` | Uses marker pixel size to estimate distance from camera using pinhole projection |
 | `energy_logger.py` | Tracks the drone’s flight path, calculates total travel distance, and estimates energy usage |
 
-> **Note**: The onboard camera of the `x500_depth` model has been modified to point downward for marker detection.
+---
 
-![Camera Orientation](https://github.com/user-attachments/assets/5db78375-8d41-4a06-97c1-fc9f4ef10dc0)
+### ⚡ Node: `energy_logger.py`
+
+This node is responsible for calculating flight distance and estimating energy expenditure based on odometry.
+
+**Key Functionalities:**
+
+| Step | Description |
+|------|-------------|
+| 1 | Subscribes to PX4 odometry (`/fmu/out/vehicle_odometry`) |
+| 2 | Monitors drone’s `(x, y, z)` positions |
+| 3 | Calculates stepwise distances |
+| 4 | Aggregates total distance |
+| 5 | Estimates energy based on 1 unit/meter assumption |
+
+![Final Result](https://github.com/user-attachments/assets/baf82ba8-ec47-4e64-b993-63ecf235087a)
 
 ---
 
@@ -47,6 +61,9 @@ This node estimates the physical distance between the drone and the detected ArU
 | 4 | Applies camera intrinsics to estimate range |
 | 5 | Outputs estimated distance in meters |
 
+**Sample Output:**
+![Energy Logger Output](https://github.com/user-attachments/assets/954350cd-a707-4dbb-852f-e1ab16b4d66f)
+
 ---
 
 ### 📊 Core Parameters
@@ -64,28 +81,6 @@ This node estimates the physical distance between the drone and the detected ArU
 \text{Distance} = \frac{f_x \cdot \text{Marker Real Size}}{\text{Marker Pixel Width}}
 \]
 
-**Sample Output:**
-![Distance Output](https://github.com/user-attachments/assets/64792be6-cef8-49f2-86e2-868df13e5567)
-
----
-
-### ⚡ Node: `energy_logger.py`
-
-This node is responsible for calculating flight distance and estimating energy expenditure based on odometry.
-
-**Key Functionalities:**
-
-| Step | Description |
-|------|-------------|
-| 1 | Subscribes to PX4 odometry (`/fmu/out/vehicle_odometry`) |
-| 2 | Monitors drone’s `(x, y, z)` positions |
-| 3 | Calculates stepwise distances |
-| 4 | Aggregates total distance |
-| 5 | Estimates energy based on 1 unit/meter assumption |
-
-**Sample Output:**
-![Energy Logger Output](https://github.com/user-attachments/assets/954350cd-a707-4dbb-852f-e1ab16b4d66f)
-
 ---
 
 ## ✈️ Flight Control Nodes
@@ -97,6 +92,9 @@ This node is responsible for calculating flight distance and estimating energy e
 - Maintains a stable hover
 - Publishes to `/fmu/in/trajectory_setpoint`
 
+**Graph View:**
+![rqt_graph](https://github.com/user-attachments/assets/7291d843-08b6-40c3-aa6d-262bb79058e5)
+
 ---
 
 ### `aruco_landing.py`
@@ -105,6 +103,10 @@ This node is responsible for calculating flight distance and estimating energy e
 - Calculates offset between marker center and image center
 - Applies velocity correction using `/cmd_vel`
 - Lands drone when marker is centered in view
+
+> **Note**: The onboard camera of the `x500_depth` model has been modified to point downward for marker detection.
+
+![Camera Orientation](https://github.com/user-attachments/assets/5db78375-8d41-4a06-97c1-fc9f4ef10dc0)
 
 ---
 
@@ -140,6 +142,9 @@ ros2 run terrain_mapping_drone_control aruco_landing.py
 ros2 run terrain_mapping_drone_control dimension_estimator.py
 ```
 
+**Sample Output:**
+![Distance Output](https://github.com/user-attachments/assets/64792be6-cef8-49f2-86e2-868df13e5567)
+
 6. **Run Energy Logger:**
 
 ```bash
@@ -154,9 +159,6 @@ ros2 run terrain_mapping_drone_control energy_logger.py
 rqt_graph
 ```
 
-**Graph View:**
-![rqt_graph](https://github.com/user-attachments/assets/7291d843-08b6-40c3-aa6d-262bb79058e5)
-
 ---
 
 ## ✅ Final Output
@@ -166,5 +168,3 @@ The drone:
 - Detects and aligns with the ArUco marker
 - Lands automatically when aligned
 - Logs motion metrics for post-mission analysis
-
-![Final Result](https://github.com/user-attachments/assets/baf82ba8-ec47-4e64-b993-63ecf235087a)
