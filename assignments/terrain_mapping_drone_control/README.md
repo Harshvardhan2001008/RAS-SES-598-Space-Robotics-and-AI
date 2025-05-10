@@ -177,4 +177,6 @@ The drone:
 Below is a demonstration of the complete autonomous drone operation including takeoff, marker detection, and landing.
 
 > ▶️ **Play the video**:  
-[Click to Watch the Demo Video](Demo_Video.mp4)
+https://github.com/user-attachments/assets/2231b62f-fb50-49b0-90a1-dde4b65cf8dc
+
+
