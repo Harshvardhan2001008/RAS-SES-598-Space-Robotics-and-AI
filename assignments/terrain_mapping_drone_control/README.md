@@ -168,3 +168,13 @@ The drone:
 - Detects and aligns with the ArUco marker
 - Lands automatically when aligned
 - Logs motion metrics for post-mission analysis
+
+
+---
+
+## 🎥 Demo Video
+
+Below is a demonstration of the complete autonomous drone operation including takeoff, marker detection, and landing.
+
+> ▶️ **Play the video**:  
+[Click to Watch the Demo Video](Demo_Video.mp4)
