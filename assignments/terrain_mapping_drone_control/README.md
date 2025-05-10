@@ -1,129 +1,157 @@
-# Assignment 3: Rocky Times Challenge - Search, Map, & Analyze
 
-This ROS2 package implements an autonomous drone system for geological feature detection, mapping, and analysis using an RGBD camera and PX4 SITL simulation.
+# 🛰️ Autonomous Drone Task: Search, Localize, and Land — PX4 + ROS 2
 
-## Challenge Overview
+This repository hosts a ROS 2 package enabling a fully autonomous drone routine in Gazebo using PX4 SITL. The mission comprises:
 
-Students will develop a controller for a PX4-powered drone to efficiently search, map, and analyze cylindrical rock formations in an unknown environment. The drone must identify two rock formations (10m and 7m tall cylinders), estimate their dimensions, and successfully land on top of the taller cylinder.
+- Controlled Vertical Takeoff and Hover
+- ArUco Marker Recognition for Visual Targeting
+- Vision-Based Precision Landing
+- Real-Time Energy Monitoring and Range Estimation
 
-### Mission Objectives
-1. Search and locate all cylindrical rock formations
-2. Map and analyze rock dimensions:
-   - Estimate height and diameter of each cylinder
-   - Determine positions in the world frame
-3. Land safely on top of the taller cylinder
-4. Complete mission while logging time and energy performance. 
+---
 
-![Screenshot from 2025-03-04 20-22-35](https://github.com/user-attachments/assets/3548b6da-613a-401d-bf38-e9e3ac4a2a2b)
+## 🔧 System Architecture and Nodes
 
-### Evaluation Criteria (100 points)
+Four ROS 2 nodes power the autonomous flight sequence:
 
-The assignment will be evaluated based on:
-- Total time taken to complete the mission
-- Total energy units consumed during operation
-- Accuracy of cylinder dimension estimates
-- Landing precision on the taller cylinder
-- Performance across multiple trials (10 known + 5 unknown scenes)
+| Node Name | Functionality |
+|-----------|---------------|
+| `takeoff_and_hover.py` | Arms drone, initiates OFFBOARD mode, takes off to a defined altitude, and maintains a hover |
+| `aruco_landing.py` | Identifies ArUco markers via camera feed and guides the drone to land when aligned |
+| `dimension_estimator.py` | Uses marker pixel size to estimate distance from camera using pinhole projection |
+| `energy_logger.py` | Tracks the drone’s flight path, calculates total travel distance, and estimates energy usage |
 
-### Key Requirements
+> **Note**: The onboard camera of the `x500_depth` model has been modified to point downward for marker detection.
 
-- Autonomous takeoff and search strategy implementation
-- Real-time cylinder detection and dimension estimation
-- Energy-conscious path planning
-- Safe and precise landing on the target cylinder
-- Robust performance across different scenarios
+---
 
-## Prerequisites
+### 🧠 Node: `dimension_estimator.py`
 
-- ROS2 Humble
-- PX4 SITL Simulator (Tested with PX4-Autopilot main branch 9ac03f03eb)
-- RTAB-Map ROS2 package
-- OpenCV
-- Python 3.8+
+This node estimates the physical distance between the drone and the detected ArUco marker in the environment using camera geometry.
 
-## Repository Setup
+**Data Sources:**
 
-### If you already have a fork of the course repository:
+- Topic: `/rgb_camera`
+- ArUco detection via OpenCV
+- Pinhole camera model for distance inference
+
+**Process Overview:**
+
+| Step | Detail |
+|------|--------|
+| 1 | Subscribes to RGB image feed |
+| 2 | Detects ArUco markers in real-time |
+| 3 | Extracts marker width in pixel space |
+| 4 | Applies camera intrinsics to estimate range |
+| 5 | Outputs estimated distance in meters |
+
+---
+
+### 📊 Core Parameters
+
+| Parameter | Value | Notes |
+|----------|-------|-------|
+| Marker Size | `0.2 m` | Real-world physical marker width |
+| Focal Length | `554.0 px` | Approximate camera intrinsics |
+
+---
+
+### 📐 Range Estimation Formula
+
+\[
+\text{Distance} = \frac{f_x \cdot \text{Marker Real Size}}{\text{Marker Pixel Width}}
+\]
+
+---
+
+### ⚡ Node: `energy_logger.py`
+
+This node is responsible for calculating flight distance and estimating energy expenditure based on odometry.
+
+**Key Functionalities:**
+
+| Step | Description |
+|------|-------------|
+| 1 | Subscribes to PX4 odometry (`/fmu/out/vehicle_odometry`) |
+| 2 | Monitors drone’s `(x, y, z)` positions |
+| 3 | Calculates stepwise distances |
+| 4 | Aggregates total distance |
+| 5 | Estimates energy based on 1 unit/meter assumption |
+
+---
+
+## ✈️ Flight Control Nodes
+
+### `takeoff_and_hover.py`
+- Automatically arms the drone
+- Switches into **OFFBOARD** mode
+- Takes off vertically to **15 meters**
+- Maintains a stable hover
+- Publishes to `/fmu/in/trajectory_setpoint`
+
+---
+
+### `aruco_landing.py`
+- Receives frames from `/rgb_camera`
+- Detects ArUco marker using OpenCV
+- Calculates offset between marker center and image center
+- Applies velocity correction using `/cmd_vel`
+- Lands drone when marker is centered in view
+
+---
+
+## 🧪 How to Run the System
+
+1. **Launch Gazebo with Drone and Marker:**
 
 ```bash
-# Navigate to your local copy of the repository
-cd ~/RAS-SES-598-Space-Robotics-and-AI
-
-# Add the original repository as upstream (if not already done)
-git remote add upstream https://github.com/DREAMS-lab/RAS-SES-598-Space-Robotics-and-AI.git
-
-# Fetch the latest changes from upstream
-git fetch upstream
-
-# Checkout your main branch
-git checkout main
-
-# Merge upstream changes
-git merge upstream/main
-
-# Push the updates to your fork
-git push origin main
-```
-
-### If you don't have a fork yet:
-
-1. Fork the course repository:
-   - Visit: https://github.com/DREAMS-lab/RAS-SES-598-Space-Robotics-and-AI
-   - Click "Fork" in the top-right corner
-   - Select your GitHub account as the destination
-
-2. Clone your fork:
-```bash
-cd ~/
-git clone https://github.com/YOUR_USERNAME/RAS-SES-598-Space-Robotics-and-AI.git
-```
-
-### Create Symlink to ROS2 Workspace
-
-```bash
-# Create symlink in your ROS2 workspace
-cd ~/ros2_ws/src
-ln -s ~/RAS-SES-598-Space-Robotics-and-AI/assignments/terrain_mapping_drone_control .
-```
-
-### Copy PX4 Model Files
-
-Copy the custom PX4 model files to the PX4-Autopilot folder
-
-```bash
-# Navigate to the package
-cd ~/ros2_ws/src/terrain_mapping_drone_control
-
-# Make the setup script executable
-chmod +x scripts/deploy_px4_model.sh
-
-# Run the setup script to copy model files
-./scripts/deploy_px4_model.sh -p /path/to/PX4-Autopilot
-```
-
-## Building and Running
-
-```bash
-# Build the package
-cd ~/ros2_ws
-colcon build --packages-select terrain_mapping_drone_control --symlink-install
-
-# Source the workspace
-source install/setup.bash
-
-# Launch the simulation with visualization with your PX4-Autopilot path
 ros2 launch terrain_mapping_drone_control cylinder_landing.launch.py
-
-# OR you can change the default path in the launch file
-        DeclareLaunchArgument(
-            'px4_autopilot_path',
-            default_value=os.environ.get('HOME', '/home/' + os.environ.get('USER', 'user')) + '/PX4-Autopilot',
-            description='Path to PX4-Autopilot directory'),
 ```
-## Extra credit -- 3D reconstruction (50 points)
-Use RTAB-Map or a SLAM ecosystem of your choice to map both rocks, and export the world as a mesh file, and upload to your repo. Use git large file system (LFS) if needed. 
 
-## License
+2. **Start Micro XRCE Agent:**
 
-This assignment is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0). 
-For more details: https://creativecommons.org/licenses/by-nc-sa/4.0/ 
+```bash
+MicroXRCEAgent udp4 -p 8888
+```
+
+3. **Takeoff Node:**
+
+```bash
+ros2 run terrain_mapping_drone_control takeoff_and_hover.py
+```
+
+4. **Run ArUco Landing Node:**
+
+```bash
+ros2 run terrain_mapping_drone_control aruco_landing.py
+```
+
+5. **Run Dimension Estimator:**
+
+```bash
+ros2 run terrain_mapping_drone_control dimension_estimator.py
+```
+
+6. **Run Energy Logger:**
+
+```bash
+ros2 run terrain_mapping_drone_control energy_logger.py
+```
+
+---
+
+## 🔁 ROS Graph
+
+```bash
+rqt_graph
+```
+
+---
+
+## ✅ Final Output
+
+The drone:
+- Takes off to a target altitude
+- Detects and aligns with the ArUco marker
+- Lands automatically when aligned
+- Logs motion metrics for post-mission analysis
