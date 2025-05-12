@@ -1,0 +1,11 @@
+[console_scripts]
+camera_info_publisher = ros2_project.camera_info_publisher:main
+control = ros2_project.control:main
+coordinates = ros2_project.coordinates:main
+image_saver = ros2_project.image_saver:main
+odometry_tf_broadcaster = ros2_project.odometry_tf_broadcaster:main
+offboard_control = ros2_project.offboard_control:main
+processes = ros2_project.processes:main
+velocity_control = ros2_project.velocity_control:main
+visualizer = ros2_project.visualizer:main
+yolo = ros2_project.yolo:main

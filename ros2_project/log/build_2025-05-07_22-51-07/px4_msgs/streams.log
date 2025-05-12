@@ -1,0 +1,45 @@
+[0.014s] Invoking command in '/home/harsh/ros2_project/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/harsh/ros2_project/install/ros2_project:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(yolo) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(yolo) /usr/bin/cmake /home/harsh/ros2_project/src/px4_msgs -DCMAKE_INSTALL_PREFIX=/home/harsh/ros2_project/install/px4_msgs
+[0.029s] -- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.255s] -- Found builtin_interfaces: 2.0.2 (/opt/ros/jazzy/share/builtin_interfaces/cmake)
+[0.286s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.296s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.308s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.322s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.334s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.342s] -- Found rosidl_adapter: 4.6.5 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.543s] [31mCMake Error at /opt/ros/jazzy/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:57 (message):
+[0.543s]   execute_process(/home/harsh/yolo/bin/python3 -m rosidl_adapter
+[0.543s]   --package-name px4_msgs --arguments-file
+[0.543s]   /home/harsh/ros2_project/build/px4_msgs/rosidl_adapter__arguments__px4_msgs.json
+[0.543s]   --output-dir
+[0.543s]   /home/harsh/ros2_project/build/px4_msgs/rosidl_adapter/px4_msgs
+[0.543s]   --output-file
+[0.543s]   /home/harsh/ros2_project/build/px4_msgs/rosidl_adapter/px4_msgs.idls)
+[0.543s]   returned error code 1:
+[0.544s] 
+[0.544s]   Traceback (most recent call last):
+[0.544s] 
+[0.544s]     File "<frozen runpy>", line 198, in _run_module_as_main
+[0.544s]     File "<frozen runpy>", line 88, in _run_code
+[0.544s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.544s]       sys.exit(main())
+[0.544s]                ^^^^^^
+[0.544s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/main.py", line 53, in main
+[0.544s]       abs_idl_file = convert_to_idl(
+[0.544s]                      ^^^^^^^^^^^^^^^
+[0.544s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/__init__.py", line 18, in convert_to_idl
+[0.544s]       from rosidl_adapter.msg import convert_msg_to_idl
+[0.545s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/msg/__init__.py", line 16, in <module>
+[0.545s]       from rosidl_adapter.resource import expand_template
+[0.545s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/resource/__init__.py", line 19, in <module>
+[0.545s]       import em
+[0.545s] 
+[0.545s]   ModuleNotFoundError: No module named 'em'
+[0.545s] 
+[0.545s] Call Stack (most recent call first):
+[0.545s]   /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:132 (rosidl_adapt_interfaces)
+[0.545s]   CMakeLists.txt:28 (rosidl_generate_interfaces)
+[0.545s] 
+[0.545s] [0m
+[0.545s] -- Configuring incomplete, errors occurred!
+[0.551s] Invoked command in '/home/harsh/ros2_project/build/px4_msgs' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/harsh/ros2_project/install/ros2_project:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(yolo) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(yolo) /usr/bin/cmake /home/harsh/ros2_project/src/px4_msgs -DCMAKE_INSTALL_PREFIX=/home/harsh/ros2_project/install/px4_msgs

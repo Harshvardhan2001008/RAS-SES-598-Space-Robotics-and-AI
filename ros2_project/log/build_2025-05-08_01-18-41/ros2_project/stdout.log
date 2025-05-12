@@ -1,0 +1,36 @@
+running egg_info
+writing ../../../build/ros2_project/ros2_project.egg-info/PKG-INFO
+writing dependency_links to ../../../build/ros2_project/ros2_project.egg-info/dependency_links.txt
+writing entry points to ../../../build/ros2_project/ros2_project.egg-info/entry_points.txt
+writing requirements to ../../../build/ros2_project/ros2_project.egg-info/requires.txt
+writing top-level names to ../../../build/ros2_project/ros2_project.egg-info/top_level.txt
+reading manifest file '../../../build/ros2_project/ros2_project.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../../build/ros2_project/ros2_project.egg-info/SOURCES.txt'
+running build
+running build_py
+copying ros2_project/coordinates (Copy).py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+copying ros2_project/yolo.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+copying ros2_project/coordinates.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+running install
+running install_lib
+copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/coordinates (Copy).py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/coordinates.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/coordinates (Copy).py to coordinates (Copy).cpython-312.pyc
+byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/coordinates.py to coordinates.cpython-312.pyc
+running install_data
+running install_egg_info
+removing '/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../../build/ros2_project/ros2_project.egg-info to /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project-0.0.0-py3.12.egg-info
+running install_scripts
+Installing camera_info_publisher script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+Installing control script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+Installing coordinates script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+Installing image_saver script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+Installing odometry_tf_broadcaster script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+Installing offboard_control script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+Installing processes script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+Installing velocity_control script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+Installing visualizer script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+Installing yolo script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+writing list of installed files to '/home/harsh/ros2_project/build/ros2_project/install.log'

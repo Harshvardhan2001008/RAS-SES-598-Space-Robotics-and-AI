@@ -1,0 +1,5 @@
+[0.000000] (-) TimerEvent: {}
+[0.000358] (px4_msgs) JobQueued: {'identifier': 'px4_msgs', 'dependencies': OrderedDict()}
+[0.000405] (px4_msgs) JobStarted: {'identifier': 'px4_msgs'}
+[0.053192] (px4_msgs) JobEnded: {'identifier': 'px4_msgs', 'rc': 1}
+[0.063605] (-) EventReactorShutdown: {}

@@ -1,0 +1,41 @@
+[1.183s] Invoking command in '/home/harsh/ros2_project/src/ros2_project/ros2_project': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(yolo) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/harsh/ros2_project/build/ros2_project/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/home/harsh/ros2_project/install/px4_msgs/lib/python3.12/site-packages:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/home/harsh/ros2_project/install/px4_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:$PYTHONPATH:/home/harsh/yolo/lib/python3.12/site-packages:/home/harsh/yolo/lib/python3.12/site-packages VIRTUAL_ENV_PROMPT=(yolo) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ros2_project build --build-base /home/harsh/ros2_project/build/ros2_project/build install --record /home/harsh/ros2_project/build/ros2_project/install.log --single-version-externally-managed install_data
+[1.495s] /home/harsh/.local/lib/python3.12/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[1.495s]   warnings.warn(msg)
+[1.796s] running egg_info
+[1.826s] writing ../../../build/ros2_project/ros2_project.egg-info/PKG-INFO
+[1.826s] writing dependency_links to ../../../build/ros2_project/ros2_project.egg-info/dependency_links.txt
+[1.827s] writing entry points to ../../../build/ros2_project/ros2_project.egg-info/entry_points.txt
+[1.827s] writing requirements to ../../../build/ros2_project/ros2_project.egg-info/requires.txt
+[1.827s] writing top-level names to ../../../build/ros2_project/ros2_project.egg-info/top_level.txt
+[1.877s] reading manifest file '../../../build/ros2_project/ros2_project.egg-info/SOURCES.txt'
+[1.877s] adding license file 'LICENSE'
+[1.878s] writing manifest file '../../../build/ros2_project/ros2_project.egg-info/SOURCES.txt'
+[1.878s] running build
+[1.878s] running build_py
+[1.879s] copying ros2_project/coordinates (Copy).py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[1.879s] copying ros2_project/yolo.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[1.879s] copying ros2_project/coordinates.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[1.880s] running install
+[1.886s] running install_lib
+[1.917s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/coordinates (Copy).py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[1.917s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/coordinates.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[1.918s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/coordinates (Copy).py to coordinates (Copy).cpython-312.pyc
+[1.919s] Sorry: IndentationError: unexpected indent (coordinates (Copy).py, line 60)
+[1.919s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/coordinates.py to coordinates.cpython-312.pyc
+[1.920s] running install_data
+[1.920s] running install_egg_info
+[1.943s] removing '/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project-0.0.0-py3.12.egg-info' (and everything under it)
+[1.943s] Copying ../../../build/ros2_project/ros2_project.egg-info to /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project-0.0.0-py3.12.egg-info
+[1.944s] running install_scripts
+[2.097s] Installing camera_info_publisher script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[2.097s] Installing control script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[2.097s] Installing coordinates script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[2.097s] Installing image_saver script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[2.097s] Installing odometry_tf_broadcaster script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[2.097s] Installing offboard_control script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[2.098s] Installing processes script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[2.098s] Installing velocity_control script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[2.098s] Installing visualizer script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[2.098s] Installing yolo script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[2.098s] writing list of installed files to '/home/harsh/ros2_project/build/ros2_project/install.log'
+[2.140s] Invoked command in '/home/harsh/ros2_project/src/ros2_project/ros2_project' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(yolo) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/harsh/ros2_project/build/ros2_project/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/home/harsh/ros2_project/install/px4_msgs/lib/python3.12/site-packages:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/home/harsh/ros2_project/install/px4_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:$PYTHONPATH:/home/harsh/yolo/lib/python3.12/site-packages:/home/harsh/yolo/lib/python3.12/site-packages VIRTUAL_ENV_PROMPT=(yolo) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ros2_project build --build-base /home/harsh/ros2_project/build/ros2_project/build install --record /home/harsh/ros2_project/build/ros2_project/install.log --single-version-externally-managed install_data

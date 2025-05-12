@@ -1,0 +1,79 @@
+[0.506s] Invoking command in '/home/harsh/ros2_project/src/ros2_project/ros2_project': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(yolo) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/harsh/ros2_project/build/ros2_project/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/home/harsh/ros2_project/install/px4_msgs/lib/python3.12/site-packages:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/home/harsh/ros2_project/install/px4_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:$PYTHONPATH:/home/harsh/yolo/lib/python3.12/site-packages:/home/harsh/yolo/lib/python3.12/site-packages VIRTUAL_ENV_PROMPT=(yolo) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ros2_project build --build-base /home/harsh/ros2_project/build/ros2_project/build install --record /home/harsh/ros2_project/build/ros2_project/install.log --single-version-externally-managed install_data
+[0.606s] /home/harsh/.local/lib/python3.12/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[0.606s]   warnings.warn(msg)
+[0.682s] running egg_info
+[0.695s] creating ../../../build/ros2_project/ros2_project.egg-info
+[0.695s] writing ../../../build/ros2_project/ros2_project.egg-info/PKG-INFO
+[0.696s] writing dependency_links to ../../../build/ros2_project/ros2_project.egg-info/dependency_links.txt
+[0.696s] writing entry points to ../../../build/ros2_project/ros2_project.egg-info/entry_points.txt
+[0.696s] writing requirements to ../../../build/ros2_project/ros2_project.egg-info/requires.txt
+[0.696s] writing top-level names to ../../../build/ros2_project/ros2_project.egg-info/top_level.txt
+[0.696s] writing manifest file '../../../build/ros2_project/ros2_project.egg-info/SOURCES.txt'
+[0.723s] reading manifest file '../../../build/ros2_project/ros2_project.egg-info/SOURCES.txt'
+[0.723s] adding license file 'LICENSE'
+[0.724s] writing manifest file '../../../build/ros2_project/ros2_project.egg-info/SOURCES.txt'
+[0.724s] running build
+[0.724s] running build_py
+[0.724s] creating /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.724s] copying ros2_project/image_saver.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/camera_info_publisher.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/__init__.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/coordinates (Copy).py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/processes.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/velocity_control.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/control.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/image_viewer.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/visualizer.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/yolo.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/odometry_tf_broadcaster.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] copying ros2_project/coordinates.py -> /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project
+[0.725s] running install
+[0.729s] running install_lib
+[0.741s] creating /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.741s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/image_saver.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/camera_info_publisher.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/__init__.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/coordinates (Copy).py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/processes.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/velocity_control.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/control.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/image_viewer.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/visualizer.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/yolo.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/odometry_tf_broadcaster.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] copying /home/harsh/ros2_project/build/ros2_project/build/lib/ros2_project/coordinates.py -> /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project
+[0.742s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/image_saver.py to image_saver.cpython-312.pyc
+[0.743s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/camera_info_publisher.py to camera_info_publisher.cpython-312.pyc
+[0.744s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/__init__.py to __init__.cpython-312.pyc
+[0.744s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/coordinates (Copy).py to coordinates (Copy).cpython-312.pyc
+[0.745s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/processes.py to processes.cpython-312.pyc
+[0.745s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/velocity_control.py to velocity_control.cpython-312.pyc
+[0.746s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/control.py to control.cpython-312.pyc
+[0.747s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/image_viewer.py to image_viewer.cpython-312.pyc
+[0.747s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/visualizer.py to visualizer.cpython-312.pyc
+[0.748s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/yolo.py to yolo.cpython-312.pyc
+[0.748s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/odometry_tf_broadcaster.py to odometry_tf_broadcaster.cpython-312.pyc
+[0.748s] byte-compiling /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project/coordinates.py to coordinates.cpython-312.pyc
+[0.749s] running install_data
+[0.749s] creating /home/harsh/ros2_project/install/ros2_project/share/ament_index/resource_index/packages
+[0.749s] copying resource/ros2_project -> /home/harsh/ros2_project/install/ros2_project/share/ament_index/resource_index/packages
+[0.750s] copying resource/visualize.rviz -> /home/harsh/ros2_project/install/ros2_project/share/ament_index/resource_index/packages
+[0.750s] copying package.xml -> /home/harsh/ros2_project/install/ros2_project/share/ros2_project
+[0.750s] copying launch/drone.launch.py -> /home/harsh/ros2_project/install/ros2_project/share/ros2_project
+[0.750s] copying launch/arena.launch.py -> /home/harsh/ros2_project/install/ros2_project/share/ros2_project
+[0.750s] copying resource/visualize.rviz -> /home/harsh/ros2_project/install/ros2_project/share/ros2_project
+[0.750s] running install_egg_info
+[0.763s] Copying ../../../build/ros2_project/ros2_project.egg-info to /home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages/ros2_project-0.0.0-py3.12.egg-info
+[0.764s] running install_scripts
+[0.834s] Installing camera_info_publisher script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[0.834s] Installing control script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[0.835s] Installing coordinates script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[0.835s] Installing image_saver script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[0.835s] Installing odometry_tf_broadcaster script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[0.835s] Installing offboard_control script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[0.835s] Installing processes script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[0.835s] Installing velocity_control script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[0.835s] Installing visualizer script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[0.835s] Installing yolo script to /home/harsh/ros2_project/install/ros2_project/lib/ros2_project
+[0.835s] writing list of installed files to '/home/harsh/ros2_project/build/ros2_project/install.log'
+[0.851s] Invoked command in '/home/harsh/ros2_project/src/ros2_project/ros2_project' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(yolo) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/harsh/ros2_project/build/ros2_project/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/home/harsh/ros2_project/install/px4_msgs/lib/python3.12/site-packages:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:/home/harsh/ros2_project/install/ros2_project/lib/python3.12/site-packages:/home/harsh/ros2_project/install/px4_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:$PYTHONPATH:/home/harsh/yolo/lib/python3.12/site-packages:/home/harsh/yolo/lib/python3.12/site-packages VIRTUAL_ENV_PROMPT=(yolo) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ros2_project build --build-base /home/harsh/ros2_project/build/ros2_project/build install --record /home/harsh/ros2_project/build/ros2_project/install.log --single-version-externally-managed install_data
