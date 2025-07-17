@@ -162,8 +162,9 @@ ros2_project/
 
 ## 👨‍💻 Authors
 
+- **Harshvardhan Sivasubramanian** 
 - **Teja Vishnu Vardhan Boddu**  
 - **Vijayram Sriram Sathananthan**  
-- **Harshvardhan**  
+ 
 
 Team RAS 598 – *Space Robotics*
